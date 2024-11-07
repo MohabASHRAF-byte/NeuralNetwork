@@ -1,4 +1,5 @@
 import test
+from Gui import Gui
 
 if __name__ == "__main__":
-    test.oursVsBuiltin_Adaline()
+    Gui.run_model()
