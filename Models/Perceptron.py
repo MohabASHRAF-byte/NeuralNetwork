@@ -1,6 +1,4 @@
 import numpy as np
-from prettytable import PrettyTable
-import utilities
 from ActivationFunction import signum
 from utilities import confusion_matrix
 

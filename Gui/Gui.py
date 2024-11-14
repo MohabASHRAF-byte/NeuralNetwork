@@ -162,6 +162,7 @@ def update_plot(frame, fig):
 # Create the main window
 root = tk.Tk()
 root.title("Hyperparameter Testing GUI")
+root.geometry("450x600")
 
 # Create a canvas for scrolling
 canvas = tk.Canvas(root, highlightthickness=0)
@@ -175,7 +176,7 @@ v_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 canvas.configure(yscrollcommand=v_scrollbar.set)
 
 # Add a frame inside the canvas
-main_frame = ttk.Frame(canvas)
+main_frame = ttk.Frame(canvas, padding=(20, 20))
 canvas.create_window((0, 0), window=main_frame, anchor="nw")
 
 
