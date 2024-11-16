@@ -57,12 +57,13 @@ class AdalineGD:
         training_input = (training_input - self.training_input_mean) / self.training_input_std
         # Calculate the output of the model 
         linear_output = self.net_input(training_input)
-        # Get the output of the activation function 
+        # Get the output of the activation function
         classified_classes = self.activation(linear_output)
+        classified_classes = np.where(classified_classes == -1, 0, classified_classes)
         return classified_classes
 
-    def confusion_matrix(self, data_input, data_output):
+    def confusion_matrix(self, test_input, test_output):
         # Get predicted classes
-        classified = self.predict(data_input)
+        classified = self.predict(test_input)
         # this is implemented confusion matrix in utilities not built in
-        return confusion_matrix(data_output, classified)
+        return confusion_matrix(classified, test_output)
